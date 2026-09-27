@@ -831,6 +831,38 @@ YouTube 영상은 iframe 임베드로 페이지 안에서 재생됩니다. 게�
   @media (prefers-reduced-motion: reduce) {
     #amg-petal-260925 .amgp-steps li { transition: none; }
   }
+
+  /* High-resolution previews preserve the video card layout. */
+  #amg-petal-260925 .amgp-video-preview {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    padding: 0;
+    border: 0;
+    background: #000;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: inherit;
+    appearance: none;
+  }
+  #amg-petal-260925 .amgp-video-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #amg-petal-260925 .amgp-play-icon {
+    position: absolute;
+    width: 68px;
+    height: 48px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #amg-petal-260925 .amgp-video-preview:focus-visible {
+    outline: 3px solid #966357;
+    outline-offset: -3px;
+  }
 </style>
 <div id="amg-petal-260925" lang="ko">
   <section class="amgp-panel amgp-hero" aria-labelledby="amgp-title-260925">
@@ -900,9 +932,9 @@ YouTube 영상은 iframe 임베드로 페이지 안에서 재생됩니다. 게�
       <div class="amgp-tags"><span class="amgp-tag amgp-deadline">3~5일</span><span class="amgp-tag">무컨펌</span><span
           class="amgp-tag">고정틀</span><span class="amgp-tag">카메라·연출 없음</span></div>
       <div class="amgp-videos">
-        <div class="amgp-video"><iframe src="https://www.youtube.com/embed/6eCz2bWNeMw" title="A type 영상 샘플 1" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-        <div class="amgp-video"><iframe src="https://www.youtube.com/embed/6UASG0HV4m4" title="A type 영상 샘플 2" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-        <div class="amgp-video"><iframe src="https://www.youtube.com/embed/Simn25srxuQ" title="A type 영상 샘플 3" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="amgp-video"><button class="amgp-video-preview" type="button" aria-label="A type 영상 샘플 1 재생"><img src="https://i.ytimg.com/vi/6eCz2bWNeMw/maxresdefault.jpg" data-video-id="6eCz2bWNeMw" alt="" loading="lazy" width="1280" height="720"><svg class="amgp-play-icon" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#f03"/><path fill="#fff" d="m27 14 18 10-18 10Z"/></svg></button><template><iframe src="https://www.youtube.com/embed/6eCz2bWNeMw" title="A type 영상 샘플 1" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></template></div>
+        <div class="amgp-video"><button class="amgp-video-preview" type="button" aria-label="A type 영상 샘플 2 재생"><img src="https://i.ytimg.com/vi/6UASG0HV4m4/maxresdefault.jpg" data-video-id="6UASG0HV4m4" alt="" loading="lazy" width="1280" height="720"><svg class="amgp-play-icon" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#f03"/><path fill="#fff" d="m27 14 18 10-18 10Z"/></svg></button><template><iframe src="https://www.youtube.com/embed/6UASG0HV4m4" title="A type 영상 샘플 2" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></template></div>
+        <div class="amgp-video"><button class="amgp-video-preview" type="button" aria-label="A type 영상 샘플 3 재생"><img src="https://i.ytimg.com/vi/Simn25srxuQ/maxresdefault.jpg" data-video-id="Simn25srxuQ" alt="" loading="lazy" width="1280" height="720"><svg class="amgp-play-icon" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#f03"/><path fill="#fff" d="m27 14 18 10-18 10Z"/></svg></button><template><iframe src="https://www.youtube.com/embed/Simn25srxuQ" title="A type 영상 샘플 3" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></template></div>
         </div>
     </article>
     <article class="amgp-type">
@@ -912,7 +944,7 @@ YouTube 영상은 iframe 임베드로 페이지 안에서 재생됩니다. 게�
       <p>간단한 카메라 움직임과 연출을 추가한 베이직 타입입니다.</p>
       <div class="amgp-tags"><span class="amgp-tag amgp-deadline">10~14일</span><span class="amgp-tag">컨펌 1회</span><span
           class="amgp-tag">간단한 카메라</span><span class="amgp-tag">간단한 연출</span></div>
-      <div class="amgp-videos"><div class="amgp-video"><iframe src="https://www.youtube.com/embed/_sTc-4YfU2g" title="B type 영상 샘플 1" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="amgp-video"><iframe src="https://www.youtube.com/embed/cPlvBn8pUgY" title="B type 영상 샘플 2" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="amgp-video"><iframe src="https://www.youtube.com/embed/XfE-emovykM" title="B type 영상 샘플 3" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="amgp-video"><iframe src="https://www.youtube.com/embed/VNLOFbLvgic" title="B type 영상 샘플 4" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="amgp-video"><iframe src="https://www.youtube.com/embed/zjoKCVWZJSw" title="B type 영상 샘플 5" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+      <div class="amgp-videos"><div class="amgp-video"><button class="amgp-video-preview" type="button" aria-label="B type 영상 샘플 1 재생"><img src="https://i.ytimg.com/vi/_sTc-4YfU2g/maxresdefault.jpg" data-video-id="_sTc-4YfU2g" alt="" loading="lazy" width="1280" height="720"><svg class="amgp-play-icon" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#f03"/><path fill="#fff" d="m27 14 18 10-18 10Z"/></svg></button><template><iframe src="https://www.youtube.com/embed/_sTc-4YfU2g" title="B type 영상 샘플 1" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></template></div><div class="amgp-video"><button class="amgp-video-preview" type="button" aria-label="B type 영상 샘플 2 재생"><img src="https://i.ytimg.com/vi/cPlvBn8pUgY/maxresdefault.jpg" data-video-id="cPlvBn8pUgY" alt="" loading="lazy" width="1280" height="720"><svg class="amgp-play-icon" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#f03"/><path fill="#fff" d="m27 14 18 10-18 10Z"/></svg></button><template><iframe src="https://www.youtube.com/embed/cPlvBn8pUgY" title="B type 영상 샘플 2" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></template></div><div class="amgp-video"><button class="amgp-video-preview" type="button" aria-label="B type 영상 샘플 3 재생"><img src="https://i.ytimg.com/vi/XfE-emovykM/maxresdefault.jpg" data-video-id="XfE-emovykM" alt="" loading="lazy" width="1280" height="720"><svg class="amgp-play-icon" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#f03"/><path fill="#fff" d="m27 14 18 10-18 10Z"/></svg></button><template><iframe src="https://www.youtube.com/embed/XfE-emovykM" title="B type 영상 샘플 3" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></template></div><div class="amgp-video"><button class="amgp-video-preview" type="button" aria-label="B type 영상 샘플 4 재생"><img src="https://i.ytimg.com/vi/VNLOFbLvgic/maxresdefault.jpg" data-video-id="VNLOFbLvgic" alt="" loading="lazy" width="1280" height="720"><svg class="amgp-play-icon" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#f03"/><path fill="#fff" d="m27 14 18 10-18 10Z"/></svg></button><template><iframe src="https://www.youtube.com/embed/VNLOFbLvgic" title="B type 영상 샘플 4" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></template></div><div class="amgp-video"><button class="amgp-video-preview" type="button" aria-label="B type 영상 샘플 5 재생"><img src="https://i.ytimg.com/vi/zjoKCVWZJSw/maxresdefault.jpg" data-video-id="zjoKCVWZJSw" alt="" loading="lazy" width="1280" height="720"><svg class="amgp-play-icon" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#f03"/><path fill="#fff" d="m27 14 18 10-18 10Z"/></svg></button><template><iframe src="https://www.youtube.com/embed/zjoKCVWZJSw" title="B type 영상 샘플 5" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></template></div></div>
     </article>
     <article class="amgp-type">
       <div class="amgp-typehead">
@@ -921,7 +953,7 @@ YouTube 영상은 iframe 임베드로 페이지 안에서 재생됩니다. 게�
       <p>작가의 역량을 활용하여 작업하는 메인 커미션 타입입니다.</p>
       <div class="amgp-tags"><span class="amgp-tag amgp-deadline">25~30일</span><span class="amgp-tag">컨펌 2회</span><span
           class="amgp-tag">작가 역량 발휘</span><span class="amgp-tag">연출 #2~3</span></div>
-      <div class="amgp-videos"><div class="amgp-video"><iframe src="https://www.youtube.com/embed/6ZzYRydj_ZI" title="C type 영상 샘플 1" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="amgp-video"><iframe src="https://www.youtube.com/embed/kEiBGVY8o0A" title="C type 영상 샘플 2" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="amgp-video"><iframe src="https://www.youtube.com/embed/Yqy04Q4wenA" title="C type 영상 샘플 3" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="amgp-video"><iframe src="https://www.youtube.com/embed/76Vw3f710lk" title="C type 영상 샘플 4" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="amgp-video"><iframe src="https://www.youtube.com/embed/jXAJ2d0gwlc" title="C type 영상 샘플 5" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+      <div class="amgp-videos"><div class="amgp-video"><button class="amgp-video-preview" type="button" aria-label="C type 영상 샘플 1 재생"><img src="https://i.ytimg.com/vi/6ZzYRydj_ZI/maxresdefault.jpg" data-video-id="6ZzYRydj_ZI" alt="" loading="lazy" width="1280" height="720"><svg class="amgp-play-icon" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#f03"/><path fill="#fff" d="m27 14 18 10-18 10Z"/></svg></button><template><iframe src="https://www.youtube.com/embed/6ZzYRydj_ZI" title="C type 영상 샘플 1" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></template></div><div class="amgp-video"><button class="amgp-video-preview" type="button" aria-label="C type 영상 샘플 2 재생"><img src="https://i.ytimg.com/vi/kEiBGVY8o0A/maxresdefault.jpg" data-video-id="kEiBGVY8o0A" alt="" loading="lazy" width="1280" height="720"><svg class="amgp-play-icon" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#f03"/><path fill="#fff" d="m27 14 18 10-18 10Z"/></svg></button><template><iframe src="https://www.youtube.com/embed/kEiBGVY8o0A" title="C type 영상 샘플 2" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></template></div><div class="amgp-video"><button class="amgp-video-preview" type="button" aria-label="C type 영상 샘플 3 재생"><img src="https://i.ytimg.com/vi/Yqy04Q4wenA/maxresdefault.jpg" data-video-id="Yqy04Q4wenA" alt="" loading="lazy" width="1280" height="720"><svg class="amgp-play-icon" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#f03"/><path fill="#fff" d="m27 14 18 10-18 10Z"/></svg></button><template><iframe src="https://www.youtube.com/embed/Yqy04Q4wenA" title="C type 영상 샘플 3" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></template></div><div class="amgp-video"><button class="amgp-video-preview" type="button" aria-label="C type 영상 샘플 4 재생"><img src="https://i.ytimg.com/vi/76Vw3f710lk/maxresdefault.jpg" data-video-id="76Vw3f710lk" alt="" loading="lazy" width="1280" height="720"><svg class="amgp-play-icon" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#f03"/><path fill="#fff" d="m27 14 18 10-18 10Z"/></svg></button><template><iframe src="https://www.youtube.com/embed/76Vw3f710lk" title="C type 영상 샘플 4" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></template></div><div class="amgp-video"><button class="amgp-video-preview" type="button" aria-label="C type 영상 샘플 5 재생"><img src="https://i.ytimg.com/vi/jXAJ2d0gwlc/maxresdefault.jpg" data-video-id="jXAJ2d0gwlc" alt="" loading="lazy" width="1280" height="720"><svg class="amgp-play-icon" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#f03"/><path fill="#fff" d="m27 14 18 10-18 10Z"/></svg></button><template><iframe src="https://www.youtube.com/embed/jXAJ2d0gwlc" title="C type 영상 샘플 5" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></template></div></div>
     </article>
     <article class="amgp-type">
       <div class="amgp-typehead">
@@ -930,7 +962,7 @@ YouTube 영상은 iframe 임베드로 페이지 안에서 재생됩니다. 게�
       <p>기존 타입의 범위를 벗어나는 작업을 위한 협의형 타입입니다.</p>
       <div class="amgp-tags"><span class="amgp-tag amgp-deadline">일정 문의</span><span class="amgp-tag">컨펌 2회</span><span
           class="amgp-tag">타입 외 작업</span></div>
-      <div class="amgp-videos"><div class="amgp-video"><iframe src="https://www.youtube.com/embed/3Ap2OAkBlCM" title="N type 영상 샘플 1" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="amgp-video"><iframe src="https://www.youtube.com/embed/I4Z95C5cJfI" title="N type 영상 샘플 2" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="amgp-video"><iframe src="https://www.youtube.com/embed/s37yRbDDG4M" title="N type 영상 샘플 3" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+      <div class="amgp-videos"><div class="amgp-video"><button class="amgp-video-preview" type="button" aria-label="N type 영상 샘플 1 재생"><img src="https://i.ytimg.com/vi/3Ap2OAkBlCM/maxresdefault.jpg" data-video-id="3Ap2OAkBlCM" alt="" loading="lazy" width="1280" height="720"><svg class="amgp-play-icon" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#f03"/><path fill="#fff" d="m27 14 18 10-18 10Z"/></svg></button><template><iframe src="https://www.youtube.com/embed/3Ap2OAkBlCM" title="N type 영상 샘플 1" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></template></div><div class="amgp-video"><button class="amgp-video-preview" type="button" aria-label="N type 영상 샘플 2 재생"><img src="https://i.ytimg.com/vi/I4Z95C5cJfI/maxresdefault.jpg" data-video-id="I4Z95C5cJfI" alt="" loading="lazy" width="1280" height="720"><svg class="amgp-play-icon" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#f03"/><path fill="#fff" d="m27 14 18 10-18 10Z"/></svg></button><template><iframe src="https://www.youtube.com/embed/I4Z95C5cJfI" title="N type 영상 샘플 2" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></template></div><div class="amgp-video"><button class="amgp-video-preview" type="button" aria-label="N type 영상 샘플 3 재생"><img src="https://i.ytimg.com/vi/s37yRbDDG4M/maxresdefault.jpg" data-video-id="s37yRbDDG4M" alt="" loading="lazy" width="1280" height="720"><svg class="amgp-play-icon" viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="12" fill="#f03"/><path fill="#fff" d="m27 14 18 10-18 10Z"/></svg></button><template><iframe src="https://www.youtube.com/embed/s37yRbDDG4M" title="N type 영상 샘플 3" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></template></div></div>
     </article>
   </section>
   <section class="amgp-panel" aria-labelledby="amgp-thumbnail-260925"><span class="amgp-eyebrow">THUMBNAIL DESIGN</span>
@@ -1071,6 +1103,30 @@ YouTube 영상은 iframe 임베드로 페이지 안에서 재생됩니다. 게�
   (() => {
     const root = document.getElementById('amg-petal-260925');
     if (!root) return;
+    root.querySelectorAll('.amgp-video-preview').forEach(button => {
+      const image = button.querySelector('img');
+      const qualities = ['maxresdefault', 'sddefault', 'hqdefault'];
+      let quality = 0;
+      const fallback = () => {
+        if (quality + 1 < qualities.length) {
+          image.src = 'https://i.ytimg.com/vi/' + image.dataset.videoId + '/' + qualities[++quality] + '.jpg';
+        }
+      };
+      image.addEventListener('error', fallback);
+      image.addEventListener('load', () => { if (image.naturalWidth <= 120) fallback(); });
+      if (image.complete && image.naturalWidth <= 120) fallback();
+      button.addEventListener('click', () => {
+        const card = button.closest('.amgp-video');
+        const frame = card.querySelector('template').content.querySelector('iframe').cloneNode(true);
+        const url = new URL(frame.src);
+        url.searchParams.set('autoplay', '1');
+        url.searchParams.set('playsinline', '1');
+        frame.src = url.href;
+        frame.loading = 'eager';
+        card.replaceChildren(frame);
+        frame.focus({ preventScroll: true });
+      });
+    });
     const form = root.querySelector('.amgp-form');
     const copyButton = root.querySelector('.amgp-copyguide');
     if (form && copyButton) copyButton.addEventListener('click', async () => {
